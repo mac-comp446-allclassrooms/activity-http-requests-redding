@@ -1,0 +1,76 @@
+"GET /todo HTTP/1.1" 200 -
+
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.13.1
+Date: Wed, 29 Jan 2025 18:38:44 GMT
+Content-Type: application/json
+Content-Length: 370
+Connection: close
+
+{
+  "tasks": [
+    {
+      "description": "Milk, Cheese, Pizza, Fruit, Tylenol",
+      "done": false,
+      "title": "Buy groceries",
+      "uri": "http://127.0.0.1:5000/todo/1"
+    },
+    {
+      "description": "Need to find a good Python tutorial on the web",
+      "done": false,
+      "title": "Learn Python",
+      "uri": "http://127.0.0.1:5000/todo/2"
+    }
+  ]
+}
+-----------------------------------------------------------------------
+"POST /todo HTTP/1.1" 201 -
+
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.3 Python/3.13.1
+Date: Wed, 29 Jan 2025 18:51:03 GMT
+Content-Type: application/json
+Content-Length: 189
+Connection: close
+
+{
+  "task": {
+    "description": "view tasks, create new, mark done, delete task, submit",
+    "done": false,
+    "title": "Do IC activity",
+    "uri": "http://127.0.0.1:5000/todo/3"
+  }
+}
+
+-----------------------------------------------------------------------
+"PUT /todo/1 HTTP/1.1" 200 -
+
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.13.1
+Date: Wed, 29 Jan 2025 18:55:15 GMT
+Content-Type: application/json
+Content-Length: 168
+Connection: close
+
+{
+  "task": {
+    "description": "Milk, Cheese, Pizza, Fruit, Tylenol",
+    "done": true,
+    "title": "Buy groceries",
+    "uri": "http://127.0.0.1:5000/todo/1"
+  }
+}
+
+-----------------------------------------------------------------------
+"DELETE /todo/2 HTTP/1.1" 200 -
+
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.13.1
+Date: Wed, 29 Jan 2025 18:57:24 GMT
+Content-Type: application/json
+Content-Length: 21
+Connection: close
+
+{
+  "result": true
+}
